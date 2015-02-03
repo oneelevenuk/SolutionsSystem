@@ -52,13 +52,15 @@
 			</div>
 			<div class="panel-body">
 				<table class="table table-striped" ng-controller="DomainsController">
-					<tr>
-						<th>Domains</th>
-						<th>Customer</th>
-						<th>Renewal Date</th>
-						<th>Edit</th>
-						<th>Delete</th>
-					</tr>
+					<thead>
+						<tr>
+							<th>Domains</th>
+							<th>Customer</th>
+							<th>Renewal Date</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
 					<tbody>
 						<tr ng-show="domains.length" ng-repeat="domain in domains" ng-controller="DomainController">
 							<td><a ng-click="edit()">{{domain.Domain}}</a></td>
