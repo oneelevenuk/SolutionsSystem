@@ -1,7 +1,7 @@
 <?php
 
 
-$con=mysqli_connect("sql3.freemysqlhosting.net","sql365671","lV3*sD3*","sql365671");
+$con=mysqli_connect("localhost","root","shutupblud","system");
 // Check connection
 if (mysqli_connect_errno())
   {
