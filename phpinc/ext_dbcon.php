@@ -1,7 +1,7 @@
 <?php
 
 
-$con=mysqli_connect("localhost","root","shutupblud","system");
+$con=mysqli_connect("localhost","public","password","system");
 // Check connection
 if (mysqli_connect_errno())
   {
