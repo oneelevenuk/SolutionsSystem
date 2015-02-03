@@ -1,0 +1,55 @@
+<div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+
+<div ng-app="" ng-controller="domaineditController">
+  <div ng-repeat="x in names">
+    <form class="form-horizontal">
+      <h3> Edit {{ x.Domain }}</h3>
+      
+      <div class="form-group">
+        <label for="inputRenewal" class="col-sm-3 control-label">Renewal Date</label>
+        <div class="col-sm-9">
+          <input type="date" class="form-control" id="inputRenewal" value="{{ x.Renewal }}">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="inputHostedAt" class="col-sm-3 control-label">Password</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="inputHostaedAt" placeholder="Hosted At" Value="{{ x.hostedAt }}">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="inputNameServer1" class="col-sm-3 control-label">Name Server 1</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="inputHostaedAt" placeholder="Name Server 1" Value="{{ x.nserver1 }}">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="inputNameServer1" class="col-sm-3 control-label">Name Server 2</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="inputHostaedAt" placeholder="Name Server 2" Value="{{ x.nserver2 }}">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="inputNameServer1" class="col-sm-3 control-label">Name Server 3</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="inputHostaedAt" placeholder="Name Server 3" Value="{{ x.nserver3 }}">
+        </div>
+      </div>
+      
+      </div>
+    </form>
+</div>
+</div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
