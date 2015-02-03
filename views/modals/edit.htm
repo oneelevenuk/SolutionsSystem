@@ -1,0 +1,44 @@
+<form ng-submit="save()">
+	<div class="modal-header">
+		<button type="button" class="close" aria-hidden="true" ng-click="dismiss()">&times;</button>
+		<h4 class="modal-title" id="myModalLabel">Edit {{domain.Domain}}</h4>
+	</div>
+	
+	<div class="modal-body">
+		<div class="form-group">
+			<label for="inputRenewal" class="col-sm-3 control-label">Renewal Date</label>
+			<div class="col-sm-9">
+				<input type="date" class="form-control" id="inputRenewal" value="{{domain.Renewal}}">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputHostedAt" class="col-sm-3 control-label">Password</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" id="inputHostaedAt" placeholder="Hosted At" Value="{{ domain.hostedAt }}">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputNameServer1" class="col-sm-3 control-label">Name Server 1</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" id="inputHostaedAt" placeholder="Name Server 1" Value="{{ domain.nserver1 }}">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputNameServer1" class="col-sm-3 control-label">Name Server 2</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" id="inputHostaedAt" placeholder="Name Server 2" Value="{{ domain.nserver2 }}">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputNameServer1" class="col-sm-3 control-label">Name Server 3</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" id="inputHostaedAt" placeholder="Name Server 3" Value="{{ domain.nserver3 }}">
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" ng-click="dismiss()">Close</button>
+		<button type="submit" class="btn btn-primary">Save changes</button>
+	</div>
+</form>
