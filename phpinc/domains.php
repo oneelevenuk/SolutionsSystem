@@ -24,3 +24,4 @@ while ($rs = $result->fetch_array(MYSQLI_ASSOC)){
 	$output[] = $record;
 }
 echo json_encode($output);
+?>
