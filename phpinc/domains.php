@@ -14,7 +14,12 @@ while ($rs = $result->fetch_array(MYSQLI_ASSOC)){
 		'CustomerID' => $rs['clientCode'],
 		'Customer' => $rs['customer'],
 		'uniqueID' => $rs['domainid'],
-		'Renewal' => $rs['renewalDate']
+		'Renewal' => $rs['renewalDate'],
+		'HostedWith' => $rs['hostedAt'],
+		'nserver1' => $rs['nameServers1'],
+		'nserver2' => $rs['nameServers2'],
+		'nserver3' => $rs['nameServers3'],
+		'Status' => $rs['domainStatus']
 	);
 	$output[] = $record;
 }
