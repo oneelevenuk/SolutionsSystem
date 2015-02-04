@@ -10,11 +10,16 @@ $result = $con->query("SELECT * FROM domainDetails LEFT OUTER JOIN customerCodes
 $outp = "[";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "[") {$outp .= ",";}
-    $outp .= '{"Domain":"'  . $rs["domainName"] . '",';
-	  $outp .= '"CustomerID":"'   . $rs["clientCode"]        . '",';
-    $outp .= '"Customer":"'   . $rs["customer"]        . '",';
-  	$outp .= '"uniqueID":"'   . $rs["domainid"]        . '",';
-    $outp .= '"Renewal":"'. $rs["renewalDate"]     . '"}'; 
+    	$outp .= '{"Domain":"'. $rs["domainName"].'",';
+    	$outp .= '"CustomerID":"'. $rs["clientCode"]. '",';
+    	$outp .= '"Customer":"'. $rs["customer"]. '",';
+    	$outp .= '"uniqueID":"'. $rs["domainid"]. '",';
+    	$outp .= '"HostedWith":"'. $rs["hostedAt"]. '",';
+    	$outp .= '"nserver1":"'. $rs["nameServers1"]. '",';
+    	$outp .= '"nserver2":"'. $rs["nameServers2"]. '",';
+    	$outp .= '"nserver3":"'. $rs["nameServers3"]. '",';
+    	$outp .= '"Status":"'. $rs["domainStatus"]. '",';
+    	$outp .= '"Renewal":"'. $rs["renewalDate"]. '"}';
 }
 $outp .="]";
 
