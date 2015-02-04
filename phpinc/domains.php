@@ -7,19 +7,15 @@ include ('ext_dbcon.php');
 
 $result = $con->query("SELECT * FROM domainDetails LEFT OUTER JOIN customerCodes ON domainDetails.clientCode = customerCodes.clientCode");
 
-$outp = "[";
-while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-    if ($outp != "[") {$outp .= ",";}
-    $outp .= '{"Domain":"'  . $rs["domainName"] . '",';
-	  $outp .= '"CustomerID":"'   . $rs["clientCode"]        . '",';
-    $outp .= '"Customer":"'   . $rs["customer"]        . '",';
-  	$outp .= '"uniqueID":"'   . $rs["domainid"]        . '",';
-    $outp .= '"Renewal":"'. $rs["renewalDate"]     . '"}'; 
+$output = array();
+while ($rs = $result->fetch_array(MYSQLI_ASSOC)){
+	$record = array(
+		'Domain' => $rs['domainName'],
+		'CustomerID' => $rs['clientCode'],
+		'Customer' => $rs['customer'],
+		'uniqueID' => $rs['domainid'],
+		'Renewal' => $rs['renewalDate']
+	);
+	$output[] = $record;
 }
-$outp .="]";
-
-include ('ext_dbdis.php');
-
-echo($outp);
-
-?> 
+echo json_encode($output);
